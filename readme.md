@@ -33,6 +33,8 @@ Right now there are two ways to use Tune
 - Join the waitlist on [Discord](https://discord.gg/QmfGeMGM)
 - Self-host [Tune](https://tune/selfhosted/install-on-your-server)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://github.com/tune-co/tune)
+
 ### Highlights
 
 - Very few 3rd party dependencies. No need to install clickhouse in the open source version.
