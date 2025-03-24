@@ -1,0 +1,5 @@
+{
+	"scripts": {
+		"wordpress-symlink": "ln -s '/Users/shash/Documents/projects/tune/packages/tune' '/Users/shash/Local Sites/tune/app/public/wp-content/plugins'"
+	}
+}
