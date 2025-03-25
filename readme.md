@@ -31,9 +31,7 @@ Tune is a open-source Event tracking tool. Monitor signups, webhooks, cronjobs a
 Right now there are two ways to use Tune
 
 - Join the waitlist on [Discord](https://discord.gg/QmfGeMGM)
-- Self-host [Tune](https://tune/selfhosted/install-on-your-server)
-
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://github.com/tune-co/tune)
+- Self-host [Tune](https://tune/selfhosted)
 
 ### Highlights
 
@@ -47,6 +45,6 @@ This is a monorepo of 3 repos:
 
 - /app the spa for tune
 - /backend the expressjs api powering the backend
-- /website nuxtjs marketing website
+- /website astrojs marketing website
 
 And the /packages folder has public npm packages which are shared across all repos.
