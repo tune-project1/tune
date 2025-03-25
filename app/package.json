@@ -13,7 +13,6 @@
     "@mdx-js/rollup": "3.0.1",
     "@mdx-js/vue": "3.0.1",
     "@tune/components": "*",
-    "@tune/content": "*",
     "@tune/lib": "*",
     "@tune/styles": "*",
     "@popperjs/core": "2.11.8",
