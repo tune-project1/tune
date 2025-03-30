@@ -152,6 +152,14 @@ class Tune_Admin {
 			)
 		);
 
+		// Register the log activity setting
+		// PLUGIN CHECK POTENTIAL ERROR - this is sanitized but it throws error for some reason
+		register_setting(
+			'tune_options',
+			'tune_baseurl',
+			$opts
+		);
+
 		// Add settings section
 		add_settings_section(
 			'tune_general_section',

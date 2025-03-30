@@ -66,6 +66,9 @@ if (config.tune.TOKEN) {
 	});
 } else {
 	ops = {
+		events: {
+			ingest: () => {},
+		},
 		log: () => {},
 	};
 }

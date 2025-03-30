@@ -27,12 +27,14 @@ if (!function_exists('Tune\ops')) {
         
         // Get the API key from WordPress options
         $token = get_option('tune_api_key', '');
+
+        $baseurl = get_option('tune_baseurl', 'https://api.tune');
         
         if (empty($token)) {
             return "Error: API key not set";
         }
 
-        $url = "https://api.tune/api/v1/ingest";
+        $url = $baseurl . "/api/v1/ingest";
         
         $args = array(
             'body' => json_encode(array_merge(['notify' => true], $data)),
