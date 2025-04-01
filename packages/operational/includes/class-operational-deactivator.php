@@ -30,6 +30,7 @@ class Tune_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
+		delete_option('tune_baseurl');
 		delete_option('tune_log_activity');
 		delete_option('tune_api_key');
 	}

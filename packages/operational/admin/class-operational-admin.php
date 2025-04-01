@@ -157,7 +157,13 @@ class Tune_Admin {
 		register_setting(
 			'tune_options',
 			'tune_baseurl',
-			$opts
+			array(
+				'type' => 'string',
+				'sanitize_callback' => function($value) {
+					return sanitize_text_field($value);
+				},
+				'default' => ''
+			)
 		);
 
 		// Add settings section
@@ -182,6 +188,15 @@ class Tune_Admin {
 			'tune_log_activity',
 			'Log User Activity',
 			array($this, 'log_activity_field_callback'),
+			'tune_options',
+			'tune_general_section'
+		);
+
+		// Add BaseUrl field
+		add_settings_field(
+			'tune_baseurl',
+			'Base url',
+			array($this, 'baseurl_field_callback'),
 			'tune_options',
 			'tune_general_section'
 		);
@@ -535,6 +550,14 @@ class Tune_Admin {
 	public function api_key_field_callback() {
 		$api_key = get_option('tune_api_key');
 		echo '<input type="text" id="tune_api_key" name="tune_api_key" value="' . esc_attr($api_key) . '" class="regular-text">';
+	}
+
+	/**
+	 * Callback for Baseurl field
+	 */
+	public function baseurl_field_callback() {
+		$api_key = get_option('tune_baseurl');
+		echo '<input placeholder="https://api.tune" type="text" id="tune_baseurl" name="tune_baseurl" value="' . esc_attr($api_key) . '" class="regular-text">';
 	}
 
 	/**

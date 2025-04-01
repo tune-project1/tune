@@ -29,6 +29,8 @@ if (!function_exists('Tune\ops')) {
         $token = get_option('tune_api_key', '');
 
         $baseurl = get_option('tune_baseurl', 'https://api.tune');
+
+        $url = $baseurl . "/api/v1/ingest";
         
         if (empty($token)) {
             return "Error: API key not set";

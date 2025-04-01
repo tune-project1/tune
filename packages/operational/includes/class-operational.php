@@ -110,12 +110,6 @@ class Tune {
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-tune-loader.php';
 
 		/**
-		 * The class responsible for defining internationalization functionality
-		 * of the plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-tune-i18n.php';
-
-		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-tune-admin.php';
@@ -140,8 +134,6 @@ class Tune {
 	 * @access   private
 	 */
 	private function set_locale() {
-
-		$plugin_i18n = new Tune_i18n();
 
 	}
 
