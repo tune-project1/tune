@@ -1,4 +1,4 @@
-import { apiList, manualList, selfhostedList } from "@tune/content/list.js";
+import { apiList, manualList, selfhostedList, otherList } from "@tune/content/list.js";
 
 const headings = [];
 
@@ -23,6 +23,13 @@ manualList.map((page) => {
   });
 });
 selfhostedList.map((page) => {
+  headings.push({
+    text: page.name,
+    slug: page.path,
+    depth: page.depth || 0
+  });
+});
+otherList.map((page) => {
   headings.push({
     text: page.name,
     slug: page.path,
