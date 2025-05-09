@@ -1,21 +1,21 @@
-![hero](media/tune-banner.jpg)
+<p align="center">
+  <a href="https://tune">
+    <img src="media/tune-banner.jpg" width="340px" alt="Tune Event tracker" />
+  </a>
+</p>
 
 <p align="center">
-    <h1 align="center"><b>Tune</b></h1>
-<p align="center">
-    Open-source Event tracker for tech products.
-    <br />
-    <br />
-    <a href="https://tune" target="_blank">Website</a>
-    ·
-    <a href="https://tune/api" target="_blank">Docs</a>
-    ·
-    <a href="https://discord.gg/QmfGeMGM" target="_blank">Discord</a>
-  </p>
-  <br />
+    <a href="https://tune" target="_blank">Website</a> |
+    <a href="https://tune/api" target="_blank">Docs</a> |
+    <a href="https://tune/selfhosted/introduction" target="_blank">Self-hosting</a> |
+    <a href="https://tune/pitch" target="_blank">Pitch</a> |
+    <a href="https://tune/vision" target="_blank">Vision</a>
+    <br /><br />
 </p>
 
 Tune is a open-source Event tracking tool. Monitor signups, webhooks, cronjobs and more. Tune is a Open source alternative to Logsnag, another Event tracking tool in the same category.
+
+![Tune Event tracker](media/tune-screenshot.png)
 
 ### Why use Tune?
 
@@ -48,3 +48,8 @@ This is a monorepo of 3 repos:
 - /website astrojs marketing website
 
 And the /packages folder has public npm packages which are shared across all repos.
+
+### Community
+
+We have a active Discord community.
+<a href="https://discord.gg/QmfGeMGM" target="_blank">Discord</a>
