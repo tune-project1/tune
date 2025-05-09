@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://tune">
-    <img src="media/tune-banner.jpg" width="480px" alt="Tune Event tracker" />
+    <img src="media/tune-banner.jpg" width="600px" alt="Tune Event tracker" />
   </a>
 </p>
 
@@ -30,7 +30,7 @@ Tune is a Open source alternative to Logsnag, another Event tracking tool in the
 
 ## How to use Tune?
 
-Right now there are two ways to use Tune:
+There are two ways to use Tune:
 
 - Join the waitlist on [Discord](https://discord.gg/QmfGeMGM)
 - Self-host [Tune](https://tune/selfhosted)
@@ -42,16 +42,26 @@ Right now there are two ways to use Tune:
 - Feature packed. Send json, formatted json, bundle up logs in contexts, add action buttons, and more.
 - Easy to grok and tear apart - no useless dependencies, nor unnecessarily complex code.
 
-## Structure
-
-This is a monorepo of 3 repos:
-
-- /app the spa for tune
-- /backend the expressjs api powering the backend
-- /website astrojs marketing website
-
-And the /packages folder has public npm packages which are shared across all repos.
-
-### Community
+## Community
 
 We have a active [Discord](https://discord.gg/QmfGeMGM) community. We highly recommend jumping on our Discord server for updates, feedback and help.
+
+## Technology
+
+Tune has a dead-simple tech stack:
+
+- Nodejs >=18
+- Mysql 8.x
+- Prismajs
+- Clickhouse(optional)
+- Expressjs 5.x
+- Vue 3
+- Vite
+
+Tune itself is a monorepo of 3 repos:
+
+- /app the SPA for tune
+- /backend the expressjs app powering the backend
+
+- /website astrojs marketing website
+- /packages folder has public npm packages which are shared across all repos.
