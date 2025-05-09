@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://tune">
-    <img src="media/tune-banner.jpg" width="340px" alt="Tune Event tracker" />
+    <img src="media/tune-banner.jpg" width="480px" alt="Tune Event tracker" />
   </a>
 </p>
 
@@ -9,11 +9,13 @@
     <a href="https://tune/api" target="_blank">Docs</a> |
     <a href="https://tune/selfhosted/introduction" target="_blank">Self-hosting</a> |
     <a href="https://tune/pitch" target="_blank">Pitch</a> |
-    <a href="https://tune/vision" target="_blank">Vision</a>
+    <a href="https://tune/other/vision" target="_blank">Vision</a>
     <br /><br />
 </p>
 
-Tune is a open-source Event tracking tool. Monitor signups, webhooks, cronjobs and more. Tune is a Open source alternative to Logsnag, another Event tracking tool in the same category.
+[Tune](https://tune) is a open-source Event tracking tool. Monitor signups, webhooks, cronjobs and more.
+
+Tune is a Open source alternative to Logsnag, another Event tracking tool in the same category.
 
 ![Tune Event tracker](media/tune-screenshot.png)
 
@@ -28,13 +30,14 @@ Tune is a open-source Event tracking tool. Monitor signups, webhooks, cronjobs a
 
 ## How to use Tune?
 
-Right now there are two ways to use Tune
+Right now there are two ways to use Tune:
 
 - Join the waitlist on [Discord](https://discord.gg/QmfGeMGM)
 - Self-host [Tune](https://tune/selfhosted)
 
 ### Highlights
 
+- Heaps of self-hosting options, from Render.com to docker images, with video guides. We want you to self-host!
 - Very few 3rd party dependencies. No need to install clickhouse in the open source version.
 - Feature packed. Send json, formatted json, bundle up logs in contexts, add action buttons, and more.
 - Easy to grok and tear apart - no useless dependencies, nor unnecessarily complex code.
@@ -51,5 +54,4 @@ And the /packages folder has public npm packages which are shared across all rep
 
 ### Community
 
-We have a active Discord community.
-<a href="https://discord.gg/QmfGeMGM" target="_blank">Discord</a>
+We have a active [Discord](https://discord.gg/QmfGeMGM) community. We highly recommend jumping on our Discord server for updates, feedback and help.
