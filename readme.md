@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://tune">
-    <img src="media/tune-banner.jpg" width="600px" alt="Tune Event tracker" />
+    <img src="media/tune-banner.jpg" width="800px" alt="Tune Event tracker" />
   </a>
 </p>
 
@@ -17,7 +17,7 @@
 
 Tune is a Open source alternative to Logsnag, another Event tracking tool in the same category.
 
-![Tune Event tracker](media/tune-screenshot.png)
+![Tune Event tracker](media/tune-screenshot.png?v=1)
 
 ### Why use Tune?
 
