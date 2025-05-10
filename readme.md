@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://tune">
-    <img src="media/tune-banner.jpg" width="800px" alt="Tune Event tracker" />
+    <img src="media/tune-banner.jpg" width="700px" alt="Tune Event tracker" />
   </a>
 </p>
 
