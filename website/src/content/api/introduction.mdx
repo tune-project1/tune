@@ -5,12 +5,9 @@ description: Introduction to Tune's API docs
 date: 2024-06-08
 ---
 
-
 import Item from "@tune/components/card/index.vue";
-import Code from "@tune/components/code/index.vue";
 import CodeWrap from "@tune/components/code/wrap.vue";
 import ApiItem from "@tune/components/ui/api-item.vue";
-import ApiToc from "@tune/components/ui/api-toc.vue";
 
 # API Docs
 
@@ -21,11 +18,9 @@ Tune has a official node.js SDK.
 For other languages, you can use our REST Api.
 
 To get started with our sdk, run this inside your project:
-<Code client:only>
-```
+```bash
 npm install --save @tune/sdk
 ```
-</Code>
 
 ## Authentication
 
@@ -36,21 +31,7 @@ To do so, create an account at app.tune
 Then copy the api key from app.tune/profile/apikeys and pass it as the first parameter in the SDK or as a bearer token if using the REST api.
 
 Example:
-<CodeWrap client:only>
-<div slot="node">
-<Code client:only>
-```
-import Tune from "@tune/sdk";
-// Or use this if imports are not supported in your node.js version
-// const Tune = require("@tune/sdk");
-
-const ops = new Tune("yourapikey");
-```
-</Code>
-</div>
-<div slot="fetch">
-<Code client:only>
-```
+  ```js
 const bearerToken = 'Bearer apikey';
 const baseUrl = 'https://api.tune';
 const url = `api/${this.version}/log`;
@@ -79,8 +60,11 @@ fetch(`${baseUrl}/${url}`, {
   console.error('Error:', error);
 });
 ```
-</Code>
-</div>
-</CodeWrap>
 
-<ApiToc></ApiToc>
+  ```js
+import Tune from "@tune/sdk";
+// Or use this if imports are not supported in your node.js version
+// const Tune = require("@tune/sdk");
+
+const ops = new Tune("yourapikey");
+```
