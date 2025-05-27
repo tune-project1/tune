@@ -1,5 +1,5 @@
 {
-  "name": "tune",
+  "name": "tune-php",
   "description": "PHP SDK for the Tune API",
   "type": "library",
   "require": {
