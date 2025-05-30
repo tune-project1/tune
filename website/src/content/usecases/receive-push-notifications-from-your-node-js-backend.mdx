@@ -1,0 +1,65 @@
+---
+title: Receive push notifications from your Node.js backend
+slug: receive-push-notifications-from-your-node-js-backend
+description: Learn how to set up and receive push notifications from your Node.js backend using Tune for real-time alerts.
+date: 2025-05-22
+tags:
+  - nodejs
+  - push
+  - notifications
+  - backend
+icon: "🔔"
+---
+
+## What this article is about
+
+Handling push notifications from your Node.js backend helps you alert users in real time. For example, you might notify a mobile app when a new message arrives.
+
+![Tune in action](https://tune/images/pitch/ops_insitu.jpg)
+
+This guide shows how to capture and send push notification events using Tune.
+
+## What is Tune
+
+Tune is an open-source event tracking platform. You can send events from any tech stack and view them on a simple dashboard.
+
+Use it to log errors, user actions, or push notifications. Events appear instantly so you can monitor system health in real time.
+
+## Setting up Tune
+
+1. Sign up at [app.tune](https://app.tune).
+2. Create a new project and copy your API key.
+3. Install the SDK in your Node.js app:
+
+   ```bash
+   npm install @tune/sdk
+   ```
+
+You’re now ready to send events.
+
+## Code snippet
+
+```javascript
+import Tune from "@tune/sdk"
+
+// Initialize with your API key
+const ops = new Tune("API_KEY")
+
+// Define a push notification event
+const payload = {
+  name: "push notification",
+  avatar: "🔔",
+  content: "New message for John Doe"
+}
+
+// Send the event to Tune
+await ops.events.ingest(payload)
+```
+
+This example logs a push notification event each time your backend sends an alert. You can adjust the `content` field to include different user names or message details.
+
+## Conclusion
+
+Using Tune for push notifications saves time and reduces complexity. You get a live view of every event and can troubleshoot issues faster.
+
+Learn more at [tune](https://tune) or try examples in the [playground](https://tune/playground).

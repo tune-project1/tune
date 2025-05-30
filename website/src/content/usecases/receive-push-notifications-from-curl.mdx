@@ -1,0 +1,56 @@
+---
+title: Receive push notifications from cURL
+slug: receive-push-notifications-from-curl
+description: Use cURL to send events to Tune and receive push notifications for real-time alert tracking in your workflow.
+date: 2025-05-22
+tags:
+  - curl
+  - push
+  - notifications
+  - api
+icon: 🔔
+---
+
+## What this article covers
+
+This article shows how to use cURL to send push notification events to Tune and receive real-time alerts. You can track when a notification is delivered or fails, helping you monitor critical updates.
+
+For example, you might want to know immediately when a server status update is sent to a mobile app.
+
+![Tune in action](https://tune/images/pitch/ops_insitu.jpg)
+
+## What is Tune?
+
+Tune is an open-source event tracking service that helps you capture and stream events from any tech product. You can track notifications, errors, user actions, and more.
+
+By sending events to Tune, you get a unified dashboard and real-time alerts wherever you work.
+
+## Setting up Tune
+
+1. Sign up at [app.tune](https://app.tune).
+2. After verifying your email, go to the API keys section in your project settings.
+3. Copy your API key – you’ll use it to authenticate cURL requests.
+
+## Sending push notification events with cURL
+
+Use the following cURL command to send a push notification event to Tune:
+
+```bash
+curl -X POST https://api.tune/v1/events \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "push notification delivered",
+    "avatar": "🔔",
+    "content": "Sent push notification to Jane Doe"
+  }'
+```
+
+This example sends an event named "push notification delivered" with an alert emoji and a message indicating who received the notification.
+
+## Conclusion
+
+Using Tune with cURL saves time and reduces complexity when tracking push notifications. You get instant visibility and alerts without building your own infrastructure.
+
+Learn more at https://tune and try out snippets in the [playground](https://tune/playground).  
+Tune makes tracking and alerting fast and easy.

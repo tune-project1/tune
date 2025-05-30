@@ -46,6 +46,10 @@ There are two ways to use Tune:
 
 We have a active [Discord](https://discord.gg/QmfGeMGM) community. We highly recommend jumping on our Discord server for updates, feedback and help.
 
+## Contributing to Tune
+
+[How to contribute?](https://tune/other/contributing)
+
 ## Technology
 
 Tune has a dead-simple tech stack:

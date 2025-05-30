@@ -1,0 +1,54 @@
+---
+title: Receive push notifications for suspicious activity with cURL
+slug: receive-push-notifications-for-suspicious-activity-with-curl
+description: Learn how to use cURL with Tune to send push notifications for suspicious activity, keeping you alerted instantly.
+date: 2024-06-05
+tags:
+  - curl
+  - security
+  - notifications
+icon: 🚨
+---
+
+# 1. What this article is about
+
+This article explains how you can use cURL to send alerts for suspicious activity to Tune. Alerts help you respond quickly when something looks off.
+
+For example, you might want to know if there are multiple failed login attempts on your platform.
+
+![Tune in action](https://tune/images/pitch/ops_insitu.jpg)
+
+# 2. What is Tune?
+
+Tune is an open-source event tracking tool for tech products. You can use it to track errors, audits, and security events.
+
+By sending events to Tune, you get real-time notifications and a clear event history in one dashboard.
+
+# 3. Setting up Tune
+
+First, sign up at [app.tune](https://app.tune) with your email.
+
+Once you log in, create a new project. That will give you an API key. Copy the key for the next step.
+
+# 4. Sending events with cURL
+
+Use cURL to post events to Tune. Replace YOUR_API_KEY with your key:
+
+```bash
+curl https://api.tune/events.ingest \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{
+    "name": "Suspicious login attempt",
+    "avatar": "🚨",
+    "content": "Multiple failed login attempts from IP 203.0.113.45"
+  }'
+```
+
+This command sends a security event to Tune. You will receive a push notification when Tune ingests the event.
+
+# 5. Conclusion
+
+Using Tune with cURL saves time by letting you send alerts without extra code. You can see events in one place and get notified right away.
+
+Learn more on the [Tune homepage](https://tune) or try the [playground](https://tune/playground) to copy and paste snippets.

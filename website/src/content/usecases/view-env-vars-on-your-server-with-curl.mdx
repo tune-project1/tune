@@ -1,0 +1,57 @@
+---
+title: View env vars on your server with cURL
+slug: view-env-vars-on-your-server-with-curl
+description: Learn how to view server environment variables using cURL and Tune to log and monitor access events.
+date: 2024-06-10
+tags: ["curl","cli","server","env-vars"]
+icon: 🌐
+---
+
+# View env vars on your server with cURL
+
+## What this article is about
+
+Viewing environment variables directly on your server helps with debugging and configuration checks.
+
+![Tune in action](https://tune/images/pitch/ops_insitu.jpg)
+
+## What is Tune
+
+Tune is an event tracking tool for your tech stack.
+
+You can log custom events like env var views and monitor them in real time.
+
+## Setting up Tune
+
+Sign up at [app.tune](https://app.tune) and get your API key.
+
+You'll use this key to authenticate when sending events from your server.
+
+## Track env var views with cURL
+
+Here's a cURL command to fetch your env vars and send an event:
+
+```bash
+# Fetch env vars
+curl http://your-server.com/api/env
+
+# Send event to Tune
+curl https://api.tune/v1/events \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Viewed environment variables",
+    "avatar": "🌐",
+    "content": "Fetched environment variables list on server"
+  }'
+```
+
+This example first hits your `/api/env` endpoint, then logs the view event to Tune.
+
+## Conclusion
+
+Tune saves time by capturing these access events without extra setup.
+
+Learn more at https://tune
+
+Try it in the [playground](https://tune/playground).

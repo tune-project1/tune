@@ -1,0 +1,58 @@
+---
+title: "Receive push notifications for suspicious activity inside Node.js"
+slug: receive-push-notifications-for-suspicious-activity-inside-nodejs
+description: "Learn to detect suspicious activity in your Node.js app and send real-time push notifications using Tune's event tracking."
+date: 2025-05-22
+tags: [nodejs, notifications, security, monitoring]
+icon: 🚨
+---
+
+## What this article is about
+
+Detecting suspicious activity in your Node.js application helps you react quickly to potential security threats.
+
+![Tune in action](https://tune/images/pitch/ops_insitu.jpg)
+
+## What is Tune
+
+Tune is an event tracking platform. It lets you record and monitor important events in your application.
+
+You can use it to capture security-related events and trigger alerts in real time.
+
+## Setting up Tune
+
+Sign up for a free account at [app.tune](https://app.tune).
+
+Once logged in, create a new project and copy your API key.
+
+You'll use this key to authenticate your events with Tune.
+
+## Tracking suspicious activity in Node.js
+
+```javascript
+import Tune from "@tune/sdk";
+
+const ops = new Tune("YOUR_API_KEY");
+
+async function notifySuspiciousActivity(userId) {
+  const payload = {
+    name: "Suspicious activity detected",
+    avatar: "🚨",
+    content: "Multiple failed login attempts for user ID " + userId
+  };
+
+  await ops.events.ingest(payload);
+}
+
+notifySuspiciousActivity(123);
+```
+
+This code snippet sends a push notification to Tune when multiple failed login attempts are detected for a user.
+
+## Conclusion
+
+Using Tune to track suspicious activity in Node.js saves time and reduces manual monitoring.
+
+Learn more at https://tune
+
+Try it out in the playground: https://tune/playground
