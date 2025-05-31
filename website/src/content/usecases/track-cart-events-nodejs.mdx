@@ -1,0 +1,73 @@
+---
+title: Track cart events in Node.js
+slug: track-cart-events-nodejs
+description: Learn how to capture and analyze cart events in your Node.js application using Tune to improve conversion and user insights.
+date: 2025-05-22
+tags:
+  - nodejs
+  - ecommerce
+  - saas
+  - analytics
+icon: 🛒
+---
+
+## What is cart event tracking in Node.js?
+
+Tracking cart events in your Node.js application helps you understand user behavior. For example, you can log when a user adds or removes items from their cart or starts checkout processes.
+
+### Using Tune for cart event tracking
+
+Tune is an open source event tracking platform. It captures events from any tech product and stores them in a single place. You can use it to log cart actions and analyze them.
+
+![Tune in action](https://tune/images/misc/ops-usage.jpg)
+
+### Setup Tune
+
+1. Go to https://app.tune and sign up.
+2. Create a new project or workspace.
+3. In the project settings, find your API key.
+4. Install the SDK by running npm install @tune/sdk.
+5. Initialize the SDK with your API key in your code.
+
+### Code examples
+
+```javascript
+import Tune from "@tune/sdk";
+const ops = new Tune("YOUR_API_KEY");
+
+const payload = {
+  name: "Cart Item Added",
+  avatar: "🛒",
+  content: "John Smith added product 1234 to cart"
+};
+
+await ops.events.ingest(payload);
+```
+
+```javascript
+// Remove item from cart
+const removePayload = {
+  name: "Cart Item Removed",
+  avatar: "🗑️",
+  content: "John Smith removed product 1234 from cart"
+};
+
+await ops.events.ingest(removePayload);
+```
+
+```javascript
+// Checkout started
+const checkoutPayload = {
+  name: "Checkout Started",
+  avatar: "💳",
+  content: "John Smith started checkout for order 5678"
+};
+
+await ops.events.ingest(checkoutPayload);
+```
+
+These examples show how to track add, remove, and checkout events using Tune's SDK.
+
+### Conclusion
+
+Tracking cart events with Tune lets you spot trends and optimize your sales flow. It saves time on setup and gives clear insights. Learn more at https://tune or try the playground at https://tune/playground.

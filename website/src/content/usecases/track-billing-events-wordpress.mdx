@@ -1,0 +1,63 @@
+---
+title: Track billing events in Wordpress
+slug: track-billing-events-wordpress
+description: Learn how to track billing events in WordPress using Tune SDK for real-time analytics, reporting, and streamlined integration in minutes.
+date: 2024-06-10
+tags: [wordpress, billing, php]
+icon: 💳
+---
+
+## What is billing event tracking in WordPress
+
+Tracking billing events in your WordPress site helps you monitor purchases, subscriptions, and revenue.
+
+For example, you can log when a customer completes a purchase or renews a subscription.
+
+This data helps you analyze sales trends and improve your checkout flow.
+
+### Tracking billing events with Tune
+
+Tune is an open-source event-tracking tool that lets you capture events from any tech product.
+
+![Tune in action](https://tune/images/misc/ops-usage.jpg)
+
+You can use Tune to send billing events from your WordPress site.
+
+This lets you view events in real time and build dashboards or alerts.
+
+### Setting up Tune
+
+1. Sign up or log in at https://app.tune  
+2. Create a new project and copy your API key  
+3. Install the PHP SDK by running  
+   composer require tune-co/sdk  
+4. Keep your API key secure for use in your application
+
+### Code example: Tracking billing events in PHP
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Tune\SDK;
+
+$ops = new Tune('YOUR_API_KEY');
+
+$payload = [
+  'name'    => 'billing_success',
+  'avatar'  => '💳',
+  'content' => 'Order #1234 was successfully billed for John Smith'
+];
+
+$ops->events->ingest($payload);
+```
+
+This code initializes the Tune client and sends a billing_success event with order details.
+
+### Conclusion
+
+Tune makes it easy to track billing events in WordPress without building your own analytics.
+
+You save time and get real-time insights with minimal code.
+
+Learn more at https://tune and explore the playground at https://tune/playground

@@ -1,61 +1,55 @@
 ---
 title: Track user signup events in Node.js
 slug: track-user-signup-events-nodejs
-description: Learn how to track user signup events in your Node.js app using Tune for real-time analytics.
-date: 2025-05-22
-tags:
-  - nodejs
-  - ecommerce
-  - saas
-  - analytics
-icon: 📝
+description: Learn how to track user signup events in your Node.js app using Tune. Follow setup, integrate SDK, and capture signups.
+date: 2024-06-12
+tags: [nodejs, ecommerce, saas, analytics]
+icon: 🎉
 ---
 
-## What are user signup events in Node.js
+## What is user signup event tracking in Node.js
 
-User signup events capture when someone creates an account in your Node.js application. Tracking these events helps you understand user growth and conversion rates.
+Tracking user signup events in a Node.js app helps you understand how users join your service.
+You can measure marketing success and conversion rates.
+For example, you might track when someone signs up after clicking an ad.
+This lets you see which channels drive the most signups.
 
-For example, when a customer registers on your e-commerce site, you can log their email and timestamp to monitor marketing campaign performance.
+### Introducing Tune for event tracking
 
-## Tracking signup events with Tune
+Tune is an open source tool for tracking events in any tech product.
+It lets you send events from your Node.js server to a dashboard.
+You can view signup counts, filter by date, and slice by user attributes.
 
-Tune is an open-source event tracking tool you can add to any tech product. It lets you capture actions like user signup and view them in real time.
+![Tune in action](https://tune/images/misc/ops-usage.jpg)
 
-![](https://tune/images/misc/ops-usage.jpg)
+### Setting up Tune
 
-With a few lines of code, you can send events to Tune and explore them in a dashboard.
+1. Create an account at [app.tune](https://app.tune).
+2. In your dashboard, copy your API key.
+3. Install the SDK: `npm install @tune/sdk`
+4. Initialize the SDK with your key in your project.
 
-## Setting up Tune
+### Code example: Tracking signup events
 
-1. Sign up at [app.tune](https://app.tune) and confirm your email.
-2. Create a new project in the dashboard.
-3. Copy your API key from the project settings.
-4. Install the Node.js SDK:
-   
-   ```bash
-   npm install @tune/sdk
-   ```
-
-## Code example: Tracking user signup events in Node.js
-
-```js
+```javascript
 import Tune from "@tune/sdk"
 
-const ops = new Tune("API_KEY")
+const ops = new Tune("YOUR_API_KEY")
 
 const payload = {
-  name: "user_signup",
-  avatar: "📝",
-  content: "John Smith signed up with email john@example.com"
+  name: "User Signed Up",
+  avatar: "🎉",
+  content: "New user John Smith signed up"
 }
 
 await ops.events.ingest(payload)
 ```
-This code logs a `user_signup` event with the user's name and email. Replace `API_KEY` with your key from the dashboard.
 
-## Conclusion
+This snippet records a signup event each time a user called John Smith completes registration.
 
-Tracking user signup events with Tune saves you time and effort. You get real-time insights without building your own pipeline.
+### Conclusion
 
-Learn more at https://tune. Try out live snippets in the
-[playground](https://tune/playground).
+Tracking user signups helps you measure growth and optimize your onboarding flow.
+Tune saves time by handling event delivery and storage.
+Learn more at https://tune
+Try the playground to copy and paste snippets: https://tune/playground

@@ -1,0 +1,68 @@
+---
+title: Monitor diskspace in Node.js
+slug: monitor-diskspace-nodejs
+description: Learn how to monitor server disk space in a Node.js app and send alerts using Tune for proactive issue management.
+date: 2024-06-07
+tags:
+  - nodejs
+  - server
+  - monitoring
+icon: 💾
+---
+
+## What is disk space monitoring in Node.js
+
+Monitoring disk space means checking how much storage your server uses.  
+This helps you prevent crashes or slowdowns.  
+For example, if log files grow too large, your service may stop working.  
+Tracking disk usage in your Node.js app lets you send alerts before issues occur.
+
+### Using Tune to track disk space
+
+Tune is an open-source event tracking tool.  
+You can record custom events from your app and view them in a dashboard.  
+Use Tune to record disk space events with minimal code.
+
+![Tune usage](https://tune/images/misc/ops-usage.jpg)
+
+### Setting up Tune
+
+1. Go to [app.tune](https://app.tune) and sign up for an account.  
+2. Create a new project and copy the API key.  
+3. Keep the API key for use in your Node.js app.
+
+### Code example: sending disk space alerts
+
+```javascript
+import Tune from "@tune/sdk"
+
+const ops = new Tune("YOUR_API_KEY")
+
+// Function to get disk usage percentage
+function getDiskUsage() {
+  // Example logic to calculate disk usage
+  return 85
+}
+
+const used = getDiskUsage()
+
+if (used > 80) {
+  const payload = {
+    name: "disk space low",
+    avatar: "💾",
+    content: `Server disk space at ${used}% usage`
+  }
+
+  await ops.events.ingest(payload)
+}
+```
+
+This code checks disk usage and sends an alert event to Tune when usage exceeds 80%.
+
+### Conclusion
+
+Tune can save time by handling event storage and dashboards.  
+You get alerts for disk space issues without building your own system.  
+
+Learn more at https://tune  
+Try the playground to copy and paste snippets: https://tune/playground

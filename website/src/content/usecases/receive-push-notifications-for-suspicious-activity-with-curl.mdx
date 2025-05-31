@@ -1,43 +1,55 @@
 ---
 title: Receive push notifications for suspicious activity with cURL
 slug: receive-push-notifications-for-suspicious-activity-with-curl
-description: Learn how to use Tune with cURL to get push notifications for suspicious activity. Track events and alert your team quickly.
-date: 2024-06-15
-tags:
-  - curl
-  - notifications
-  - security
+description: Learn to send push alerts for suspicious activity using Tune API and cURL. Setup steps and code examples included.
+date: 2025-05-22
+tags: [curl, security, notifications, api]
 icon: 🚨
 ---
 
-## Why track suspicious activity?
+## What are push notifications for suspicious activity
 
-Suspicious actions like multiple failed logins or unusual access can signal a security threat.
-Implementing alerts helps you catch issues early.
+Suspicious activity alerts inform you when unusual events occur in your system.
 
-## What is Tune and how to use it?
+For example, you might detect multiple failed login attempts or access from an unfamiliar IP address.
 
-Tune lets you track events and send real-time alerts. You can use it to notify your team when something unusual happens.
+Push notifications let you respond quickly and enhance security.
 
-![Tune in action](https://tune/images/misc/ops-usage.jpg)
+### Using Tune to send alerts
 
-## Setting up Tune
+Tune is an open-source event tracking tool for tech products.
+
+It can send push notifications when you log security events.
+
+![Tune usage](https://tune/images/misc/ops-usage.jpg)
+
+### Setting up Tune for cURL
 
 1. Go to [app.tune](https://app.tune) and sign up.
-2. Create a new project or team.
-3. Copy your API key from the dashboard.
-4. Keep your API key safe; you will use it in your requests.
+2. Create a new project in the dashboard.
+3. Navigate to the API keys section.
+4. Copy your API key and keep it secure.
 
-## Sending events with cURL
+### cURL example
 
 ```bash
-curl https://api.tune/events.ingest?api_key=YOUR_API_KEY -H 'Content-Type: application/json' -d '{\"name\":\"Suspicious login attempt\",\"avatar\":\"🔒\",\"content\":\"User John Smith had 5 failed login attempts from IP 192.168.0.1\"}'
+curl -X POST https://api.tune/events/ingest \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{
+    "name": "Suspicious login detected",
+    "avatar": "🚨",
+    "content": "Multiple failed login attempts for user john.doe@example.com",
+    "tags": ["security", "login"]
+}'
 ```
 
-This command sends a suspicious activity event to Tune and triggers a push notification.
+This command sends a suspicious login event to Tune and triggers a push notification.
 
-## Conclusion
+### Conclusion
 
-Using Tune saves time and helps you stay on top of security issues.
-Learn more at [Tune](https://tune).
-Try the [playground](https://tune/playground) to copy and test snippets.
+Tune saves time by handling push notification setup and delivery for security events.
+
+Learn more at [Tune home page](https://tune).
+
+Try examples in the [playground](https://tune/playground).

@@ -1,61 +1,57 @@
 ---
 title: Receive push notifications from cURL
 slug: receive-push-notifications-from-curl
-description: Learn how to receive and process push notifications using cURL with Tune. Set up your API key and send events easily.
+description: Learn how to trigger push notifications by sending event requests to Tune API using cURL for quick alerts and monitoring.
 date: 2025-05-22
 tags:
   - curl
   - notifications
-  - api
 icon: 🔔
 ---
 
-## Why use cURL for push notifications
+## What is receiving push notifications with cURL
 
-Receiving push notifications can help you test and debug event streams in your application.
+Push notifications help you stay informed when important events occur in your systems.
 
-Using cURL gives you a fast way to catch incoming events without writing extra code.
+By using cURL, you can send a quick HTTP request to Tune and trigger an alert.
 
-For example, you can verify that your payment service sends notifications correctly by sending them to a local endpoint and inspecting the payload.
+For example, you might notify your team when a server goes down or when an error spikes.
 
-## About Tune
+### Tracking events with Tune
 
-Tune is an open source platform to track and manage events across your tech stack.
+Tune is an open-source tool for tracking and alerting on events in any product.
 
-You can send events, view them in a unified dashboard, and integrate with popular tools.
+You can configure notification channels like email, Slack, or SMS.
 
-Integrating with Tune helps you gain real-time insights into your workflows.
+When you send an event with cURL, Tune processes it and pushes notifications to your team.
 
-![Tune in action](https://tune/images/misc/ops-usage.jpg)
+![Tune Usage](https://tune/images/misc/ops-usage.jpg)
 
-## Setup Tune
+### Setting up Tune
 
-1. Visit [app.tune](https://app.tune) and sign up for an account.
-2. Create a new project in the dashboard.
-3. Copy your API key from the project settings.
-4. Keep the key handy for sending events with cURL.
+1. Go to https://app.tune and sign up for a free account.
+2. Create a new project and copy your API key from the project settings.
+3. Keep your API key handy for authenticating cURL requests.
 
-## Sending events with cURL
-
-This example shows how to send a push notification event to Tune using cURL.
+### Sending notifications with cURL
 
 ```bash
-curl https://api.tune/events \
+curl -X POST https://api.tune/events.ingest \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer API_KEY" \
   -d '{
-    "name": "push notification received",
-    "avatar": "🔔",
-    "content": "Received a push notification from Stripe"
+    "name": "High server load alert",
+    "avatar": "📈",
+    "content": "Server load exceeded 80% on server-1"
   }'
 ```
 
-This command posts an event named “push notification received” to your Tune project. You can replace the content with your own service name or message.
+This cURL request sends a push notification event to Tune. Replace `YOUR_API_KEY` with your actual token. Tune will deliver an alert to your configured channels.
 
-## Conclusion
+### Conclusion
 
-Tune saves you time by handling event ingestion and display out of the box.
+Using cURL with Tune lets you send push notifications in seconds.
 
-You can focus on your application while Tune manages the data flow.
+Tune saves time by handling delivery and retries for you.
 
-Learn more at https://tune and try the [playground](https://tune/playground) to copy and paste snippets instantly.
+Learn more at https://tune and try the playground for quick examples: https://tune/playground
