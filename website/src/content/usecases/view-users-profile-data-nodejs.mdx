@@ -1,0 +1,86 @@
+---
+title: "View user's profile data in Node.js"
+slug: view-users-profile-data-nodejs
+description: "Learn how to fetch and display a user's profile data in a Node.js app while tracking events with Tune."
+date: 2025-05-22
+tags:
+  - nodejs
+  - javascript
+  - api
+  - events
+icon: 👤
+---
+
+## What is viewing user's profile data in Node.js
+
+Fetching and displaying a user's profile data is a common task in web apps.
+
+You might need to show a user’s name, email, or avatar on a dashboard or settings page.
+
+Handling this in Node.js lets you integrate with databases or external APIs to deliver dynamic content.
+
+## Using Tune to track profile views
+
+Tune is an open-source tool for capturing events in your application.
+
+You can use it to log when a user views their profile, which helps you understand user engagement.
+
+![Tune UI](https://tune/images/misc/ops-usage.jpg)
+
+When a profile is loaded, send an event to Tune to record the action.
+
+## Setting up Tune
+
+1. Go to [app.tune](https://app.tune) and sign up for an account.
+2. In the dashboard, generate a new API key for your project.
+3. In your Node.js app, install the SDK:
+
+   ```bash
+   npm install @tune/sdk
+   ```
+4. Store your API key in an environment variable, for example:
+
+   ```bash
+   export OPERATIONAL_API_KEY=your_api_key_here
+   ```
+
+## Code snippet: Tracking profile views
+
+```javascript
+import Tune from "@tune/sdk"
+
+const ops = new Tune(process.env.OPERATIONAL_API_KEY)
+
+async function viewUserProfile(userId) {
+  // Simulate fetching user data
+  const user = { id: userId, name: "John Doe", email: "john.doe@example.com" }
+
+  // Track profile view event
+  await ops.events.ingest({
+    name: "view profile",
+    avatar: "👤",
+    content: `User ${user.name} viewed`,
+    data: {
+      userId: user.id,
+      email: user.email
+    }
+  })
+
+  return user
+}
+
+// Example usage
+viewUserProfile(123)
+  .then(profile => console.log(profile))
+  .catch(err => console.error(err))
+```
+
+This code fetches a user's profile data and sends a "view profile" event to Tune.
+
+## Conclusion
+
+Tracking profile views in your Node.js app helps you monitor user activity and improve engagement.
+
+Tune makes it easy to record these events without building your own tracking system.
+
+Learn more at [Tune](https://tune) or try out code snippets in the [playground](https://tune/playground).
