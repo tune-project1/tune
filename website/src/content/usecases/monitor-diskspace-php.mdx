@@ -40,6 +40,9 @@ Use it to track disk space alerts and stay ahead of issues.
 <?php
 $apiKey = "API_KEY";
 
+// use this to calculate disk space
+$disk_space = disk_total_space('/var/www') - disk_free_space('/var/www');
+
 $payload = [
   "name" => "Disk space low",
   "avatar" => "💾",
@@ -69,4 +72,4 @@ Using Tune saves time and effort by centralizing disk space alerts.
 
 Learn more on the [Tune home page](https://tune).
 
-Try out event tracking in the [playground](https://tune/playground).
+Try out ready-to-paste code snippets inside the [Playground](https://tune/playground).
