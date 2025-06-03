@@ -55,7 +55,7 @@ $payload = [
 ];
 
 // Send event to Tune
-$ch = curl_init('https://api.tune/v1/events/ingest');
+$ch = curl_init('https://api.tune/api/v1/ingest');
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Content-Type: application/json',
     'Authorization: Bearer API_KEY'

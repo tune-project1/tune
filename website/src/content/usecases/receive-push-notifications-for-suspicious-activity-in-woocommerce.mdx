@@ -45,7 +45,7 @@ $payload = [
 ];
 
 // Send event to Tune
-$ch = curl_init('https://api.tune/v1/events.ingest');
+$ch = curl_init('https://api.tune/api/v1/ingest');
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
 curl_setopt($ch, CURLOPT_HTTPHEADER, [

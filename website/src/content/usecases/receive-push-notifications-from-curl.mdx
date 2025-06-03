@@ -36,7 +36,7 @@ When you send an event with cURL, Tune processes it and pushes notifications to 
 ### Sending notifications with cURL
 
 ```bash
-curl -X POST https://api.tune/events.ingest \
+curl -X POST https://api.tune/api/v1/ingest \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
