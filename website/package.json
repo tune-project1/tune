@@ -17,7 +17,6 @@
     "@directus/sdk": "12.0.1",
     "@tune/app": "*",
     "@tune/components": "*",
-    "@tune/content": "^1.0.1",
     "@tune/lib": "*",
     "@tune/styles": "*",
     "@speed-highlight/core": "1.2.6",
