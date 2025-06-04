@@ -30,6 +30,10 @@ if (!function_exists('Tune\ops')) {
 
         $baseurl = get_option('tune_baseurl', 'https://api.tune');
 
+        if(!$baseurl) {
+            $baseurl = 'https://api.tune';
+        }
+
         $url = $baseurl . "/api/v1/ingest";
         
         if (empty($token)) {
@@ -46,6 +50,8 @@ if (!function_exists('Tune\ops')) {
             ),
             'method' => 'POST',
         );
+
+        
         
         $response = wp_remote_post($url, $args);
         

@@ -1,0 +1,7 @@
+{
+    "name": "tune/plugin-wordpress",
+    "type": "wordpress-plugin",
+    "require": {
+        "tune/sdk-php": "^1.0"
+    }
+}
