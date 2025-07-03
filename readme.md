@@ -15,42 +15,52 @@
 
 [Tune](https://tune) is a open-source Event tracking tool. Monitor signups, webhooks, cronjobs and more.
 
-Tune is a Open source alternative to Logsnag, another Event tracking tool in the same category.
+<p align="center">
+  <strong><a href="https://app.tune/?signinas=kevin">🔍 View Live Demo</a></strong> - See Tune in action with a demo account receiving test events.
+</p>
 
 ![Tune Event tracker](media/tune-screenshot.png?v=1)
 
-### Why use Tune?
+## ✨ Key Features
 
 - Get push notifications for critical events straight to your phone, or on the webapp
 - Monitor critical events
 - Trigger webhooks via action buttons
 - Understand complex events via contexts(events-in-events)
 - Usable on mobile as a progressive web app(can receive push notifications on mobile too)
-- Built for tech businesses
+- Built for tech products
 
-## How to use Tune?
+<hr>
 
-There are two ways to use Tune:
+## 🚀 Getting Started
 
-- Join the waitlist on [Discord](https://discord.gg/QmfGeMGM)
-- Self-host [Tune](https://tune/selfhosted)
+There are two ways to start using Tune:
 
-### Highlights
+| Option                                                             | Description                                   |
+| ------------------------------------------------------------------ | --------------------------------------------- |
+| **[Hosted Service](https://tune)**                       | Fastest way to get started                    |
+| **[Self-Hosting](https://tune/selfhosted/introduction)** | Deploy and manage Tune on your own VPS |
+
+📚 Explore our [documentation](https://tune/docs/start-here) to learn more about setup and usage.
+
+<hr>
+
+## 🪄 Highlights
 
 - Heaps of self-hosting options, from Render.com to docker images, with video guides. We want you to self-host!
 - Very few 3rd party dependencies. No need to install clickhouse in the open source version.
 - Feature packed. Send json, formatted json, bundle up logs in contexts, add action buttons, and more.
 - Easy to grok and tear apart - no useless dependencies, nor unnecessarily complex code.
 
-## Community
+## 🏡 Community
 
 We have a active [Discord](https://discord.gg/QmfGeMGM) community. We highly recommend jumping on our Discord server for updates, feedback and help.
 
-## Contributing to Tune
+## ⛏️ Contributing to Tune
 
 [How to contribute?](https://tune/other/contributing)
 
-## Technology
+## 👩‍🔬 Technology
 
 Tune has a dead-simple tech stack:
 
